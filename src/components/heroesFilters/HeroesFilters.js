@@ -5,7 +5,7 @@ import Spinner from '../spinner/Spinner';
 
 const HeroesFilters = () => {
 	const { filters, filtersLoadingStatus, filterValue } = useSelector(
-		state => state
+		state => state.filters
 	);
 	const dispatch = useDispatch();
 
