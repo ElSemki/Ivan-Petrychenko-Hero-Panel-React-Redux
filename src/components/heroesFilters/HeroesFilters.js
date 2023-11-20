@@ -1,12 +1,16 @@
 import classNames from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
+import store from '../../store';
 import Spinner from '../spinner/Spinner';
-import { heroesFilterValue } from './filtersSlice';
+import { heroesFilterValue, selectAll } from './filtersSlice';
 
 const HeroesFilters = () => {
-	const { filters, filtersLoadingStatus, filterValue } = useSelector(
+	const { filtersLoadingStatus, filterValue } = useSelector(
 		state => state.filters
 	);
+
+	const filters = selectAll(store.getState());
+
 	const dispatch = useDispatch();
 
 	if (filtersLoadingStatus === 'loading') {
