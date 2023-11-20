@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { fetchFilters, heroAdd } from '../../actions';
+import { fetchFilters } from '../../actions';
 import { useHttp } from '../../hooks/http.hook';
+import { heroAdd } from '../heroesList/heroesSlice';
 
 const HeroesAddForm = () => {
 	const [data, setData] = useState({ name: '', description: '', element: '' });
