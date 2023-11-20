@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { fetchFilters } from '../../actions';
 import { useHttp } from '../../hooks/http.hook';
+import { fetchFilters } from '../heroesFilters/filtersSlice';
 import { heroAdd } from '../heroesList/heroesSlice';
 
 const HeroesAddForm = () => {
@@ -14,7 +14,7 @@ const HeroesAddForm = () => {
 	const { request } = useHttp();
 
 	useEffect(() => {
-		dispatch(fetchFilters(request));
+		dispatch(fetchFilters());
 		// eslint-disable-next-line
 	}, []);
 
